@@ -1,0 +1,58 @@
+<canvas id="circuit-bg"></canvas>
+<div class="grain"></div>
+
+<div class="page">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__brand">
+      <a href="/" style="display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none;">
+        <span class="nav__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+            <path d="M12 2L3 6v6c0 5 3.8 8.6 9 10 5.2-1.4 9-5 9-10V6l-9-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        MiTiVPN
+      </a>
+    </div>
+
+    <div class="nav__right">
+      <div class="nav__status">
+        <span class="dot" aria-hidden="true"></span>
+        Preparing launch
+      </div>
+
+      <div class="menu">
+        <button class="menu__trigger" id="menu-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-panel" aria-label="Open menu">
+          <span class="menu__icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+        <nav class="menu__panel" id="menu-panel" role="menu" aria-hidden="true">
+          <a href="/#about" role="menuitem">About</a>
+          <a href="/#how-it-works" role="menuitem">Technology</a>
+
+          <div class="submenu">
+            <button class="submenu__trigger" id="submenu-trigger" type="button" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-panel">
+              Protocols
+              <span class="submenu__chevron" aria-hidden="true">›</span>
+            </button>
+            <div class="submenu__panel" id="submenu-panel" role="menu" aria-hidden="true">
+              <a href="/protocols/vless/" role="menuitem">VLESS</a>
+              <a href="/protocols/wireguard/" role="menuitem">WireGuard</a>
+              <a href="/protocols/openvpn/" role="menuitem">OpenVPN</a>
+              <a href="/protocols/shadowsocks/" role="menuitem">Shadowsocks</a>
+              <a href="/protocols/socks5/" role="menuitem">SOCKS5</a>
+              <a href="/protocols/" role="menuitem">Compare all</a>
+            </div>
+          </div>
+
+          <a href="/#coverage" role="menuitem">Coverage</a>
+          <a href="/#team" role="menuitem">Team</a>
+          <a href="/#faq" role="menuitem">FAQ</a>
+          <a href="/#contact" role="menuitem">Contact</a>
+          <a href="mailto:mitivpn@gmail.com" role="menuitem">Email us</a>
+        </nav>
+      </div>
+    </div>
+  </header>

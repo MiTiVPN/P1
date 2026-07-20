@@ -1,0 +1,95 @@
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span aria-hidden="true">/</span>
+    <a href="/protocols/">Protocols</a>
+    <span aria-hidden="true">/</span>
+    <span class="breadcrumb__current">OpenVPN</span>
+  </nav>
+
+  <main class="article">
+    <span class="article__eyebrow">Protocol history</span>
+    <h1 class="article__title">OpenVPN: the open-source standard that earned two decades of trust.</h1>
+    <p class="article__dek">
+      Before WireGuard, before VLESS, there was OpenVPN — a project built to prove that a VPN protocol could be
+      both fully open-source and genuinely secure. It's still one of the most audited pieces of networking software in existence.
+    </p>
+    <div class="article__meta">
+      <span>Category: Tunneling protocol</span>
+      <span>Creator: James Yonan</span>
+      <span>First released: 2001</span>
+    </div>
+
+    <div class="article__body">
+      <h2>Where OpenVPN came from</h2>
+      <p>
+        OpenVPN was written by <strong>James Yonan</strong> in 2001, at a time when commercial VPN software was
+        largely closed-source and enterprise IPsec deployments had a reputation for being difficult to configure
+        correctly — a single misconfigured setting could silently weaken an entire tunnel. Yonan built OpenVPN as
+        an open-source alternative, releasing the source code so it could be reviewed, audited, and improved by
+        anyone rather than trusted on a vendor's word.
+      </p>
+      <p>
+        That decision turned out to matter more than speed or convenience. Because OpenVPN's code has been public
+        for over twenty years, it has been formally security-audited multiple times, including a widely cited 2017
+        audit funded by the Open Source Technology Improvement Fund. Few VPN protocols have been scrutinized this
+        thoroughly for this long.
+      </p>
+
+      <h2>How it actually works</h2>
+      <p>
+        OpenVPN builds its security on <strong>TLS</strong> — the same protocol family that secures HTTPS websites
+        — using the OpenSSL library for its cryptographic operations. This gives it a level of configurability that
+        few other VPN protocols match: administrators can choose ciphers, authentication methods, and key exchange
+        algorithms, and the protocol can run over either UDP (faster, preferred for most uses) or TCP (more
+        reliable through restrictive networks, though slower).
+      </p>
+      <p>
+        That TCP fallback is one reason OpenVPN became a favorite in unstable or heavily restricted network
+        environments: because it can run over port 443 — the same port used by every HTTPS website — a censor
+        trying to block it risks blocking a large portion of the ordinary web along with it.
+      </p>
+
+      <div class="callout">
+        <span class="callout__label">The tradeoff to know about</span>
+        <p>
+          OpenVPN runs entirely in userspace, which means every packet has to cross between kernel and application
+          memory space — real overhead that protocols like WireGuard, running partly in the kernel, don't pay.
+          OpenVPN is also older and more configurable, which is a double-edged sword: flexible, but easier to
+          misconfigure than a protocol with fewer knobs.
+        </p>
+      </div>
+
+      <h2>OpenVPN vs. WireGuard</h2>
+      <table class="specs-table">
+        <tr><th>Property</th><th>OpenVPN</th><th>WireGuard</th></tr>
+        <tr><td>Released</td><td>2001</td><td>2016</td></tr>
+        <tr><td>Cryptography</td><td>Configurable (OpenSSL)</td><td>Fixed modern suite</td></tr>
+        <tr><td>Transport</td><td>UDP or TCP</td><td>UDP only</td></tr>
+        <tr><td>Port 443 disguise</td><td>Yes, natively over TCP</td><td>Needs a wrapper</td></tr>
+        <tr><td>Audit history</td><td>Extensive, 20+ years</td><td>Growing, since 2016</td></tr>
+      </table>
+
+      <h2>Where you'll encounter it</h2>
+      <p>
+        OpenVPN remains a default option in nearly every consumer and enterprise VPN client, and it's often the
+        recommended fallback in networks where WireGuard's distinctive traffic pattern gets blocked outright. Its
+        ability to blend into port 443 traffic still makes it relevant in restrictive network environments where
+        newer, faster protocols sometimes get filtered first.
+      </p>
+      <p>
+        MiTiVPN keeps OpenVPN available as a compatibility fallback for exactly this reason — networks and devices
+        that can't or won't run WireGuard or VLESS-based tunnels still have a thoroughly audited, TCP-443-capable option.
+      </p>
+    </div>
+
+    <div class="protocol-links">
+      <a href="/protocols/wireguard/">WireGuard →</a>
+      <a href="/protocols/socks5/">SOCKS5 →</a>
+      <a href="/protocols/">Compare all protocols →</a>
+    </div>
+
+    <div class="article__nav">
+      <a href="/protocols/">← Back to protocol comparison</a>
+      <a href="/">MiTiVPN home</a>
+    </div>
+  </main>

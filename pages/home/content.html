@@ -1,0 +1,432 @@
+  <main class="hero">
+    <p class="eyebrow">STATUS · NOT YET LIVE</p>
+
+    <h1 class="hero__title">
+      The wall is<br>
+      <span class="hero__title-accent">coming down.</span>
+    </h1>
+
+    <!-- Signal / WiFi mark: blocked -> open, with speed streaks -->
+    <div class="signal" role="img" aria-label="Signal indicator transitioning from blocked to a fast, open connection">
+      <svg class="signal__svg" viewBox="0 0 220 170" width="220" height="170">
+
+        <!-- speed streaks, sweep in behind the signal once connected -->
+        <g class="signal__speed">
+          <line class="speed__line speed__line--1" x1="14" y1="150" x2="70" y2="150"/>
+          <line class="speed__line speed__line--2" x1="4" y1="162" x2="46" y2="162"/>
+          <line class="speed__line speed__line--3" x1="150" y1="150" x2="206" y2="150"/>
+          <line class="speed__line speed__line--4" x1="174" y1="162" x2="216" y2="162"/>
+        </g>
+
+        <circle class="signal__dot" cx="110" cy="128" r="7"/>
+        <path class="signal__arc signal__arc--1" d="M86 108 Q110 88 134 108" />
+        <path class="signal__arc signal__arc--2" d="M66 84 Q110 46 154 84" />
+        <path class="signal__arc signal__arc--3" d="M44 58 Q110 2 176 58" />
+        <line class="signal__slash" x1="49" y1="33" x2="171" y2="142" />
+      </svg>
+    </div>
+
+    <p class="hero__sub">
+      We will be here very soon — a VPN built quietly, for the moment the connection matters most.
+      Full speed. No borders. No log.
+    </p>
+
+    <form class="notify" id="notify-form">
+      <label for="email" class="sr-only">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit">Notify me</button>
+    </form>
+    <p class="notify__hint" id="notify-hint">We'll only email you once — when we launch.</p>
+
+    <div class="countdown" id="countdown" role="timer" aria-label="Countdown to launch">
+      <div class="countdown__unit">
+        <span class="countdown__num" id="cd-days">00</span>
+        <span class="countdown__label">Days</span>
+      </div>
+      <span class="countdown__sep" aria-hidden="true">:</span>
+      <div class="countdown__unit">
+        <span class="countdown__num" id="cd-hours">00</span>
+        <span class="countdown__label">Hours</span>
+      </div>
+      <span class="countdown__sep" aria-hidden="true">:</span>
+      <div class="countdown__unit">
+        <span class="countdown__num" id="cd-mins">00</span>
+        <span class="countdown__label">Mins</span>
+      </div>
+      <span class="countdown__sep" aria-hidden="true">:</span>
+      <div class="countdown__unit">
+        <span class="countdown__num" id="cd-secs">00</span>
+        <span class="countdown__label">Secs</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FREEDOM SECTION ============ -->
+  <section class="freedom" id="about">
+    <div class="freedom__label">
+      <span class="freedom__index">§1</span>
+      Why it matters
+    </div>
+
+    <div class="freedom__intro">
+      <div>
+        <h2 class="freedom__title">Information doesn't belong to borders.</h2>
+        <p class="freedom__body">
+          In too many places, a news site, a message, a search result depends on permission it should never have needed.
+          MiTiVPN exists to remove that permission requirement — routing your connection past filters, throttling,
+          and surveillance, so the internet you reach is the same one everyone else does.
+        </p>
+        <p class="freedom__body freedom__body--secondary">
+          Access to information is a right, not a privilege granted by geography. A government, an ISP, or a firewall
+          shouldn't decide what a person is allowed to read, say, or watch. That belief is the whole reason MiTiVPN
+          is being built: a network with no borders, where a connection is judged on nothing but whether you asked for it.
+          Free, unfiltered, and yours.
+        </p>
+        <p class="freedom__body freedom__body--secondary">
+          We're not building another VPN that trades your traffic for someone else's ledger. Every architectural decision —
+          from where servers sit to how sessions are handled — is made against a single question: does this make it easier
+          to know something about the person using it? If the answer is yes, it doesn't ship.
+        </p>
+      </div>
+
+      <div class="freedom__stats">
+        <div class="freedom__stat">
+          <div class="freedom__stat-num">0</div>
+          <div class="freedom__stat-label">Bytes of traffic logged, ever</div>
+        </div>
+        <div class="freedom__stat">
+          <div class="freedom__stat-num">40+</div>
+          <div class="freedom__stat-label">Countries in the launch network</div>
+        </div>
+        <div class="freedom__stat">
+          <div class="freedom__stat-num">256</div>
+          <div class="freedom__stat-label">-bit encryption on every hop</div>
+        </div>
+        <div class="freedom__stat">
+          <div class="freedom__stat-num">5</div>
+          <div class="freedom__stat-label">Platforms at day one</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar__glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>No-log by design</h3>
+        <p>Nothing about your session is written down. Not your traffic, not your timestamps, not your IP.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar__glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 12h16M4 12a8 8 0 0116 0M4 12a8 8 0 0016 0M12 4v16" stroke="currentColor" stroke-width="1.5"/></svg>
+        </span>
+        <h3>Built for blocked regions</h3>
+        <p>Designed against deep packet inspection and aggressive state-level filtering, not just casual geo-blocks.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar__glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>Fast enough to forget it's on</h3>
+        <p>Encryption that doesn't cost you the connection — video calls and streams stay usable.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar__glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <h3>Borderless by default</h3>
+        <p>One network, reachable from anywhere — access isn't a feature you unlock by country.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="howitworks" id="how-it-works">
+    <div class="freedom__label">
+      <span class="freedom__index">§2</span>
+      The technology
+    </div>
+    <h2 class="freedom__title">How a connection actually gets through.</h2>
+    <p class="freedom__body">
+      Three layers stand between your device and the open internet. Each one is doing a different job — together
+      they're what makes MiTiVPN work in places where ordinary VPNs get detected and blocked within minutes.
+    </p>
+
+    <div class="howitworks__steps">
+      <div class="step">
+        <div class="step__num">01</div>
+        <h3>Obfuscated handshake</h3>
+        <p>Your connection is disguised as ordinary encrypted web traffic before it ever leaves your device, so deep packet inspection has nothing distinctive to flag.</p>
+        <span class="step__tag">Anti-DPI</span>
+      </div>
+      <div class="step">
+        <div class="step__num">02</div>
+        <h3>Multi-hop routing</h3>
+        <p>Traffic passes through more than one independent relay, so no single server — or the network operator watching it — ever sees both who you are and what you're requesting.</p>
+        <span class="step__tag">WireGuard-based</span>
+      </div>
+      <div class="step">
+        <div class="step__num">03</div>
+        <h3>Ephemeral sessions</h3>
+        <p>Session keys exist only in memory and are discarded the moment a connection closes. There's nothing on disk to seize, subpoena, or leak later.</p>
+        <span class="step__tag">RAM-only</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROTOCOLS ============ -->
+  <section class="protocols-teaser" id="protocols">
+    <div class="freedom__label">
+      <span class="freedom__index">§2.1</span>
+      Under the hood
+    </div>
+    <h2 class="freedom__title">Every protocol tells a different story.</h2>
+    <p class="freedom__body">
+      MiTiVPN doesn't rely on a single tunneling method. Different regions, different levels of filtering, and
+      different devices call for different tools — so we studied the history and tradeoffs of each one before
+      deciding how to combine them. Read the deep dive on any protocol below.
+    </p>
+
+    <div class="protocols-teaser__grid">
+      <a class="protocols-teaser__card" href="/protocols/vless/">
+        <h3>VLESS</h3>
+        <p>A lightweight, stateless successor to VMess built for speed and stealth over TLS.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card" href="/protocols/wireguard/">
+        <h3>WireGuard</h3>
+        <p>A modern kernel-level protocol with a tiny codebase and state-of-the-art cryptography.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card" href="/protocols/openvpn/">
+        <h3>OpenVPN</h3>
+        <p>The battle-tested open-source standard that's secured connections for over two decades.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card" href="/protocols/shadowsocks/">
+        <h3>Shadowsocks</h3>
+        <p>A SOCKS5 proxy built in China to slip past the Great Firewall's traffic analysis.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card" href="/protocols/socks5/">
+        <h3>SOCKS5</h3>
+        <p>A minimal, application-agnostic proxy protocol that's outlived three decades of networking trends.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card protocols-teaser__card--compare" href="/protocols/">
+        <h3>Compare all five</h3>
+        <p>Speed, obfuscation strength, and best-use-case, side by side in one table.</p>
+        <span class="protocols-teaser__link">See the comparison →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ COVERAGE / SERVER MAP ============ -->
+  <section class="coverage" id="coverage">
+    <div class="freedom__label">
+      <span class="freedom__index">§3</span>
+      Coverage
+    </div>
+    <h2 class="freedom__title">A network built where it's needed most.</h2>
+    <p class="freedom__body">
+      Server placement isn't just about speed — it's chosen to give people in restricted regions a nearby, reliable
+      exit point. The map below reflects the regions planned for the launch network.
+    </p>
+
+    <div class="coverage__layout">
+      <div class="coverage__map">
+        <svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map showing planned MiTiVPN server regions">
+          <!-- simplified continent silhouettes -->
+          <path class="coverage__land" d="M40 90 L90 70 130 85 150 75 190 90 180 120 150 130 120 150 90 140 60 150 40 130 Z"/>
+          <path class="coverage__land" d="M110 160 L140 155 155 190 145 230 120 240 100 210 105 175 Z"/>
+          <path class="coverage__land" d="M230 60 L270 50 310 65 320 90 290 100 260 95 235 85 Z"/>
+          <path class="coverage__land" d="M240 110 L275 105 300 140 290 190 260 210 235 180 230 140 Z"/>
+          <path class="coverage__land" d="M330 70 L400 55 460 75 450 105 400 115 350 105 Z"/>
+          <path class="coverage__land" d="M340 130 L400 125 430 160 410 190 360 185 335 160 Z"/>
+          <path class="coverage__land" d="M370 210 L410 205 425 230 400 245 375 235 Z"/>
+
+          <!-- connection links -->
+          <line class="coverage__link" x1="110" y1="100" x2="270" y2="75"/>
+          <line class="coverage__link" x1="270" y1="75" x2="390" y2="85"/>
+          <line class="coverage__link" x1="270" y1="75" x2="265" y2="150"/>
+          <line class="coverage__link" x1="390" y1="85" x2="380" y2="165"/>
+          <line class="coverage__link" x1="130" y1="190" x2="265" y2="150"/>
+
+          <!-- server nodes with pulse rings -->
+          <g>
+            <circle class="coverage__ring" cx="110" cy="100" r="6"/>
+            <circle class="coverage__node" cx="110" cy="100" r="4"/>
+          </g>
+          <g>
+            <circle class="coverage__ring" cx="270" cy="75" r="6" style="animation-delay:0.4s"/>
+            <circle class="coverage__node" cx="270" cy="75" r="4"/>
+          </g>
+          <g>
+            <circle class="coverage__ring" cx="390" cy="85" r="6" style="animation-delay:0.8s"/>
+            <circle class="coverage__node" cx="390" cy="85" r="4"/>
+          </g>
+          <g>
+            <circle class="coverage__ring" cx="265" cy="150" r="6" style="animation-delay:1.2s"/>
+            <circle class="coverage__node" cx="265" cy="150" r="4"/>
+          </g>
+          <g>
+            <circle class="coverage__ring" cx="380" cy="165" r="6" style="animation-delay:1.6s"/>
+            <circle class="coverage__node" cx="380" cy="165" r="4"/>
+          </g>
+          <g>
+            <circle class="coverage__ring" cx="130" cy="190" r="6" style="animation-delay:2s"/>
+            <circle class="coverage__node" cx="130" cy="190" r="4"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="coverage__list">
+        <div class="coverage__region">
+          <div>
+            <div class="coverage__region-name">Europe</div>
+            <div class="coverage__region-sub">Frankfurt, Amsterdam, Stockholm, Zurich</div>
+          </div>
+          <span class="coverage__region-count">14 nodes</span>
+        </div>
+        <div class="coverage__region">
+          <div>
+            <div class="coverage__region-name">Middle East &amp; Central Asia</div>
+            <div class="coverage__region-sub">Istanbul, Dubai, Yerevan</div>
+          </div>
+          <span class="coverage__region-count">9 nodes</span>
+        </div>
+        <div class="coverage__region">
+          <div>
+            <div class="coverage__region-name">East &amp; South Asia</div>
+            <div class="coverage__region-sub">Singapore, Tokyo, Mumbai</div>
+          </div>
+          <span class="coverage__region-count">11 nodes</span>
+        </div>
+        <div class="coverage__region">
+          <div>
+            <div class="coverage__region-name">North America</div>
+            <div class="coverage__region-sub">New York, Toronto, Los Angeles</div>
+          </div>
+          <span class="coverage__region-count">8 nodes</span>
+        </div>
+        <div class="coverage__region">
+          <div>
+            <div class="coverage__region-name">Africa &amp; South America</div>
+            <div class="coverage__region-sub">Cape Town, São Paulo</div>
+          </div>
+          <span class="coverage__region-count">6 nodes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section class="team" id="team">
+    <div class="freedom__label">
+      <span class="freedom__index">§4</span>
+      Who's building it
+    </div>
+    <h2 class="freedom__title">A small team, building in the open.</h2>
+    <p class="freedom__body">
+      No office, no investors telling us to add tracking "just for analytics." MiTiVPN is built by a handful of
+      engineers who've worked on network infrastructure and censorship-resistant tooling before — this time, for
+      everyone rather than one employer.
+    </p>
+
+    <div class="team__grid">
+      <div class="team__card">
+        <div class="team__avatar">R.K.</div>
+        <div class="team__name">R. Kade</div>
+        <div class="team__role">Network architecture</div>
+        <p class="team__bio">Previously built relay infrastructure for censorship-resistant messaging tools.</p>
+      </div>
+      <div class="team__card">
+        <div class="team__avatar">S.M.</div>
+        <div class="team__name">S. Marín</div>
+        <div class="team__role">Protocol &amp; cryptography</div>
+        <p class="team__bio">Focused on obfuscation protocols that survive deep packet inspection at scale.</p>
+      </div>
+      <div class="team__card">
+        <div class="team__avatar">L.O.</div>
+        <div class="team__name">L. Oyelaran</div>
+        <div class="team__role">Client engineering</div>
+        <p class="team__bio">Building the desktop and mobile apps to be fast, boring, and hard to misuse.</p>
+      </div>
+      <div class="team__card">
+        <div class="team__avatar">A.T.</div>
+        <div class="team__name">A. Tran</div>
+        <div class="team__role">Trust &amp; operations</div>
+        <p class="team__bio">Handles server relationships and the no-log policy's day-to-day enforcement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="freedom__label">
+      <span class="freedom__index">§5</span>
+      Questions
+    </div>
+    <h2 class="freedom__title">A few things people ask early.</h2>
+
+    <div class="faq__list">
+
+      <details class="faq__item" open>
+        <summary>
+          When does MiTiVPN launch?
+          <span class="faq__chevron" aria-hidden="true">+</span>
+        </summary>
+        <p>Soon. We're finishing the network before we open it, not the other way around. Join the list above and you'll be the first to know.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>
+          Will there be a free tier?
+          <span class="faq__chevron" aria-hidden="true">+</span>
+        </summary>
+        <p>Yes. Open access matters most where paying for it is hardest — a free tier will exist from day one.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>
+          What platforms will be supported?
+          <span class="faq__chevron" aria-hidden="true">+</span>
+        </summary>
+        <p>Windows, macOS, Linux, Android, and iOS are all planned for the initial release.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>
+          Do you keep connection logs?
+          <span class="faq__chevron" aria-hidden="true">+</span>
+        </summary>
+        <p>No. A strict no-log policy is a starting requirement of the architecture, not a promise added later.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>
+          How can I help or get involved?
+          <span class="faq__chevron" aria-hidden="true">+</span>
+        </summary>
+        <p>Reach out by email — early testers, translators, and feedback are all welcome before launch.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>
+          Which protocol does MiTiVPN actually use?
+          <span class="faq__chevron" aria-hidden="true">+</span>
+        </summary>
+        <p>MiTiVPN combines more than one: a WireGuard-based core for speed, wrapped in an obfuscation layer inspired by VLESS and Shadowsocks so the traffic doesn't look like a VPN at all to deep packet inspection. Read the <a href="/protocols/">protocol comparison</a> for the full breakdown.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>
+          Will MiTiVPN work where other VPNs get blocked?
+          <span class="faq__chevron" aria-hidden="true">+</span>
+        </summary>
+        <p>That's the entire design brief. Ordinary VPN protocols have a recognizable fingerprint that state-level filtering can detect and block within minutes. MiTiVPN's obfuscated handshake is built specifically to avoid that fingerprint.</p>
+      </details>
+
+    </div>
+  </section>

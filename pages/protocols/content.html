@@ -1,0 +1,118 @@
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span aria-hidden="true">/</span>
+    <span class="breadcrumb__current">Protocols</span>
+  </nav>
+
+  <main class="article">
+    <span class="article__eyebrow">Protocol comparison</span>
+    <h1 class="article__title">Five protocols, five different histories.</h1>
+    <p class="article__dek">
+      Every VPN or proxy protocol was built to solve a specific problem, for a specific adversary, at a specific
+      moment. Understanding that history is the fastest way to understand why each one behaves the way it does today.
+    </p>
+
+    <div class="article__body">
+      <p>
+        There's no single "best" protocol — there's a best protocol for a given network, threat model, and device.
+        The table below compares the five protocols MiTiVPN draws on, and each name links to a full history of how
+        it came to exist.
+      </p>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Protocol</th>
+              <th>Origin</th>
+              <th>Encryption</th>
+              <th>Speed</th>
+              <th>DPI resistance</th>
+              <th>Best for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th><a href="/protocols/vless/">VLESS</a></th>
+              <td>2020, Project X / Xray-core community</td>
+              <td>Delegated to TLS</td>
+              <td>Very fast, especially with XTLS</td>
+              <td>Very high — looks like ordinary HTTPS</td>
+              <td>Heavily filtered networks, low-overhead stealth</td>
+            </tr>
+            <tr>
+              <th><a href="/protocols/wireguard/">WireGuard</a></th>
+              <td>2016, Jason A. Donenfeld</td>
+              <td>Fixed modern suite (ChaCha20, Curve25519)</td>
+              <td>Fastest raw throughput</td>
+              <td>Low unless wrapped — recognizable by default</td>
+              <td>Raw speed on open or lightly filtered networks</td>
+            </tr>
+            <tr>
+              <th><a href="/protocols/openvpn/">OpenVPN</a></th>
+              <td>2001, James Yonan</td>
+              <td>Configurable (OpenSSL / TLS)</td>
+              <td>Moderate, slower in userspace</td>
+              <td>Moderate — strong over TCP 443</td>
+              <td>Compatibility, audited stability, older devices</td>
+            </tr>
+            <tr>
+              <th><a href="/protocols/shadowsocks/">Shadowsocks</a></th>
+              <td>2012, independent developer "clowwindy"</td>
+              <td>Built-in AEAD ciphers</td>
+              <td>Fast, minimal overhead</td>
+              <td>High — designed specifically against DPI</td>
+              <td>Regions with active probing / firewall analysis</td>
+            </tr>
+            <tr>
+              <th><a href="/protocols/socks5/">SOCKS5</a></th>
+              <td>1996, RFC 1928 (IETF)</td>
+              <td>None natively</td>
+              <td>Fast (thin relay, no encryption overhead)</td>
+              <td>None on its own — needs an outer layer</td>
+              <td>Per-application routing, foundation for other tools</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How to think about the tradeoffs</h2>
+      <p>
+        <strong>Speed vs. stealth</strong> is the central tension. WireGuard is the fastest of the group because it
+        does the least extra work — but that efficiency comes from a distinctive, easily fingerprinted packet
+        structure. VLESS and Shadowsocks trade a small amount of raw throughput for traffic that's much harder to
+        distinguish from ordinary encrypted web browsing.
+      </p>
+      <p>
+        <strong>Age isn't a weakness.</strong> OpenVPN and SOCKS5 are respectively 25 and 30 years old, and both are
+        still in daily use — not because nothing better has been invented, but because their simplicity and long
+        audit history make them dependable fallbacks when newer protocols are blocked or unavailable.
+      </p>
+      <p>
+        <strong>No protocol solves everything alone.</strong> This is why MiTiVPN, like most serious circumvention
+        tools, doesn't pick just one. A WireGuard-based core provides speed; a VLESS/XTLS-inspired obfuscation layer
+        makes the traffic boring to watch; OpenVPN remains available as a compatibility fallback; and a local
+        SOCKS5 interface lets advanced users route individual apps selectively.
+      </p>
+
+      <div class="callout">
+        <span class="callout__label">Further reading</span>
+        <p>
+          Each protocol has its own dedicated page with a full history, technical breakdown, and comparison against
+          its closest relative — start with whichever one your current setup already uses.
+        </p>
+      </div>
+    </div>
+
+    <div class="protocol-links">
+      <a href="/protocols/vless/">VLESS →</a>
+      <a href="/protocols/wireguard/">WireGuard →</a>
+      <a href="/protocols/openvpn/">OpenVPN →</a>
+      <a href="/protocols/shadowsocks/">Shadowsocks →</a>
+      <a href="/protocols/socks5/">SOCKS5 →</a>
+    </div>
+
+    <div class="article__nav">
+      <a href="/">← Back to MiTiVPN home</a>
+    </div>
+  </main>

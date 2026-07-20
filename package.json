@@ -1,0 +1,9 @@
+{
+  "name": "mitivpn-site",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "new-page": "node new-page.js"
+  }
+}
