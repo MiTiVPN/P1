@@ -1,5 +1,5 @@
 // ============================================
-// MitiVPN — animated circuit background + notify form
+// MiTiVPN — animated circuit background + notify form
 // ============================================
 
 (function circuitBackground() {
@@ -150,6 +150,39 @@
   panel.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', closeMenu);
   });
+
+  // Nested "Protocols" submenu
+  const subTrigger = document.getElementById('submenu-trigger');
+  const subPanel = document.getElementById('submenu-panel');
+
+  if (subTrigger && subPanel) {
+    function openSubmenu() {
+      subTrigger.setAttribute('aria-expanded', 'true');
+      subPanel.setAttribute('aria-hidden', 'false');
+      subPanel.setAttribute('data-open', 'true');
+    }
+
+    function closeSubmenu() {
+      subTrigger.setAttribute('aria-expanded', 'false');
+      subPanel.setAttribute('aria-hidden', 'true');
+      subPanel.removeAttribute('data-open');
+    }
+
+    subTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = subTrigger.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeSubmenu() : openSubmenu();
+    });
+
+    // Reset submenu whenever the main panel closes
+    const originalClose = closeMenu;
+    document.addEventListener('click', (e) => {
+      if (!panel.contains(e.target) && e.target !== trigger) closeSubmenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSubmenu();
+    });
+  }
 })();
 
 // ============================================

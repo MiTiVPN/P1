@@ -3,12 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MitiVPN — Free access is coming</title>
-<meta name="description" content="MitiVPN is launching soon. A VPN built for open, unrestricted access to information — fast, private, and without borders.">
+<title>MiTiVPN — No-Log VPN for Censorship-Resistant, Borderless Internet Access</title>
+<meta name="description" content="MiTiVPN is a no-log VPN built for blocked and filtered regions. Obfuscated handshakes that defeat deep packet inspection, multi-hop routing, and ephemeral RAM-only sessions — fast, private, and without borders. Launching soon on Windows, macOS, Linux, Android, and iOS.">
+<meta name="keywords" content="VPN, no-log VPN, censorship-resistant VPN, VLESS, WireGuard, OpenVPN, Shadowsocks, SOCKS5, deep packet inspection, DPI bypass, obfuscated VPN, free VPN, privacy, unblock internet">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mitivpn.com/">
+<meta name="theme-color" content="#050b18">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MiTiVPN">
+<meta property="og:title" content="MiTiVPN — No-Log VPN for Censorship-Resistant, Borderless Internet Access">
+<meta property="og:description" content="A no-log VPN built for blocked and filtered regions. Obfuscated handshakes, multi-hop routing, and ephemeral sessions — fast, private, and without borders.">
+<meta property="og:url" content="https://mitivpn.com/">
+<meta property="og:image" content="https://mitivpn.com/og-image.png">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MiTiVPN — No-Log VPN for Censorship-Resistant Internet Access">
+<meta name="twitter:description" content="Obfuscated handshakes, multi-hop routing, ephemeral sessions. A VPN built for the places ordinary VPNs get blocked.">
+<meta name="twitter:image" content="https://mitivpn.com/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MiTiVPN",
+  "url": "https://mitivpn.com/",
+  "email": "mitivpn@gmail.com",
+  "description": "MiTiVPN is a no-log VPN built for blocked and filtered regions, using obfuscated handshakes, multi-hop routing, and ephemeral RAM-only sessions.",
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When does MiTiVPN launch?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Soon. The network is being finished before it opens to the public. Join the notify list to be first to know." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will there be a free tier?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. A free tier will exist from day one, since open access matters most where paying for it is hardest." }
+    },
+    {
+      "@type": "Question",
+      "name": "What platforms will be supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Windows, macOS, Linux, Android, and iOS are all planned for the initial release." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you keep connection logs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. A strict no-log policy is a starting requirement of the architecture, not a promise added later." }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I help or get involved?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Reach out by email — early testers, translators, and feedback are all welcome before launch." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -25,7 +90,7 @@
           <path d="M12 2L3 6v6c0 5 3.8 8.6 9 10 5.2-1.4 9-5 9-10V6l-9-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
         </svg>
       </span>
-      MitiVPN
+      MiTiVPN
     </div>
 
     <div class="nav__right">
@@ -43,6 +108,22 @@
         <nav class="menu__panel" id="menu-panel" role="menu" aria-hidden="true">
           <a href="#about" role="menuitem">About</a>
           <a href="#how-it-works" role="menuitem">Technology</a>
+
+          <div class="submenu">
+            <button class="submenu__trigger" id="submenu-trigger" type="button" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-panel">
+              Protocols
+              <span class="submenu__chevron" aria-hidden="true">›</span>
+            </button>
+            <div class="submenu__panel" id="submenu-panel" role="menu" aria-hidden="true">
+              <a href="/protocols/vless.html" role="menuitem">VLESS</a>
+              <a href="/protocols/wireguard.html" role="menuitem">WireGuard</a>
+              <a href="/protocols/openvpn.html" role="menuitem">OpenVPN</a>
+              <a href="/protocols/shadowsocks.html" role="menuitem">Shadowsocks</a>
+              <a href="/protocols/socks5.html" role="menuitem">SOCKS5</a>
+              <a href="/protocols/index.html" role="menuitem">Compare all</a>
+            </div>
+          </div>
+
           <a href="#coverage" role="menuitem">Coverage</a>
           <a href="#team" role="menuitem">Team</a>
           <a href="#faq" role="menuitem">FAQ</a>
@@ -129,12 +210,12 @@
         <h2 class="freedom__title">Information doesn't belong to borders.</h2>
         <p class="freedom__body">
           In too many places, a news site, a message, a search result depends on permission it should never have needed.
-          MitiVPN exists to remove that permission requirement — routing your connection past filters, throttling,
+          MiTiVPN exists to remove that permission requirement — routing your connection past filters, throttling,
           and surveillance, so the internet you reach is the same one everyone else does.
         </p>
         <p class="freedom__body freedom__body--secondary">
           Access to information is a right, not a privilege granted by geography. A government, an ISP, or a firewall
-          shouldn't decide what a person is allowed to read, say, or watch. That belief is the whole reason MitiVPN
+          shouldn't decide what a person is allowed to read, say, or watch. That belief is the whole reason MiTiVPN
           is being built: a network with no borders, where a connection is judged on nothing but whether you asked for it.
           Free, unfiltered, and yours.
         </p>
@@ -206,7 +287,7 @@
     <h2 class="freedom__title">How a connection actually gets through.</h2>
     <p class="freedom__body">
       Three layers stand between your device and the open internet. Each one is doing a different job — together
-      they're what makes MitiVPN work in places where ordinary VPNs get detected and blocked within minutes.
+      they're what makes MiTiVPN work in places where ordinary VPNs get detected and blocked within minutes.
     </p>
 
     <div class="howitworks__steps">
@@ -231,6 +312,53 @@
     </div>
   </section>
 
+  <!-- ============ PROTOCOLS ============ -->
+  <section class="protocols-teaser" id="protocols">
+    <div class="freedom__label">
+      <span class="freedom__index">§2.1</span>
+      Under the hood
+    </div>
+    <h2 class="freedom__title">Every protocol tells a different story.</h2>
+    <p class="freedom__body">
+      MiTiVPN doesn't rely on a single tunneling method. Different regions, different levels of filtering, and
+      different devices call for different tools — so we studied the history and tradeoffs of each one before
+      deciding how to combine them. Read the deep dive on any protocol below.
+    </p>
+
+    <div class="protocols-teaser__grid">
+      <a class="protocols-teaser__card" href="/protocols/vless.html">
+        <h3>VLESS</h3>
+        <p>A lightweight, stateless successor to VMess built for speed and stealth over TLS.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card" href="/protocols/wireguard.html">
+        <h3>WireGuard</h3>
+        <p>A modern kernel-level protocol with a tiny codebase and state-of-the-art cryptography.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card" href="/protocols/openvpn.html">
+        <h3>OpenVPN</h3>
+        <p>The battle-tested open-source standard that's secured connections for over two decades.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card" href="/protocols/shadowsocks.html">
+        <h3>Shadowsocks</h3>
+        <p>A SOCKS5 proxy built in China to slip past the Great Firewall's traffic analysis.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card" href="/protocols/socks5.html">
+        <h3>SOCKS5</h3>
+        <p>A minimal, application-agnostic proxy protocol that's outlived three decades of networking trends.</p>
+        <span class="protocols-teaser__link">Read the history →</span>
+      </a>
+      <a class="protocols-teaser__card protocols-teaser__card--compare" href="/protocols/index.html">
+        <h3>Compare all five</h3>
+        <p>Speed, obfuscation strength, and best-use-case, side by side in one table.</p>
+        <span class="protocols-teaser__link">See the comparison →</span>
+      </a>
+    </div>
+  </section>
+
   <!-- ============ COVERAGE / SERVER MAP ============ -->
   <section class="coverage" id="coverage">
     <div class="freedom__label">
@@ -245,7 +373,7 @@
 
     <div class="coverage__layout">
       <div class="coverage__map">
-        <svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map showing planned MitiVPN server regions">
+        <svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map showing planned MiTiVPN server regions">
           <!-- simplified continent silhouettes -->
           <path class="coverage__land" d="M40 90 L90 70 130 85 150 75 190 90 180 120 150 130 120 150 90 140 60 150 40 130 Z"/>
           <path class="coverage__land" d="M110 160 L140 155 155 190 145 230 120 240 100 210 105 175 Z"/>
@@ -338,7 +466,7 @@
     </div>
     <h2 class="freedom__title">A small team, building in the open.</h2>
     <p class="freedom__body">
-      No office, no investors telling us to add tracking "just for analytics." MitiVPN is built by a handful of
+      No office, no investors telling us to add tracking "just for analytics." MiTiVPN is built by a handful of
       engineers who've worked on network infrastructure and censorship-resistant tooling before — this time, for
       everyone rather than one employer.
     </p>
@@ -383,7 +511,7 @@
 
       <details class="faq__item" open>
         <summary>
-          When does MitiVPN launch?
+          When does MiTiVPN launch?
           <span class="faq__chevron" aria-hidden="true">+</span>
         </summary>
         <p>Soon. We're finishing the network before we open it, not the other way around. Join the list above and you'll be the first to know.</p>
@@ -421,6 +549,22 @@
         <p>Reach out by email — early testers, translators, and feedback are all welcome before launch.</p>
       </details>
 
+      <details class="faq__item">
+        <summary>
+          Which protocol does MiTiVPN actually use?
+          <span class="faq__chevron" aria-hidden="true">+</span>
+        </summary>
+        <p>MiTiVPN combines more than one: a WireGuard-based core for speed, wrapped in an obfuscation layer inspired by VLESS and Shadowsocks so the traffic doesn't look like a VPN at all to deep packet inspection. Read the <a href="/protocols/index.html">protocol comparison</a> for the full breakdown.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>
+          Will MiTiVPN work where other VPNs get blocked?
+          <span class="faq__chevron" aria-hidden="true">+</span>
+        </summary>
+        <p>That's the entire design brief. Ordinary VPN protocols have a recognizable fingerprint that state-level filtering can detect and block within minutes. MiTiVPN's obfuscated handshake is built specifically to avoid that fingerprint.</p>
+      </details>
+
     </div>
   </section>
 
@@ -437,7 +581,8 @@
     </div>
 
     <div class="foot-bar">
-      <span>© 2026 MitiVPN</span>
+      <span>© 2026 MiTiVPN</span>
+      <a href="/protocols/index.html" class="foot-bar__link">Protocols</a>
       <span class="foot-bar__status"><span class="dot dot--sm" aria-hidden="true"></span>Building in the open</span>
     </div>
   </footer>
