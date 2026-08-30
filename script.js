@@ -197,13 +197,8 @@
   const minsEl = document.getElementById('cd-mins');
   const secsEl = document.getElementById('cd-secs');
 
-  // Target: 45 days from first load, persisted so it doesn't reset on refresh
-  const STORAGE_KEY = 'mitivpn-launch-target';
-  let target = parseInt(localStorage.getItem(STORAGE_KEY), 10);
-  if (!target || isNaN(target)) {
-    target = Date.now() + 45 * 24 * 60 * 60 * 1000;
-    try { localStorage.setItem(STORAGE_KEY, String(target)); } catch (e) {}
-  }
+  // Target: fixed launch date, shared by every visitor (Oct 14, 2026 00:00 UTC)
+  const target = 1791936000000;
 
   function pad(n) { return String(n).padStart(2, '0'); }
 
