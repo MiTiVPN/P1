@@ -198,7 +198,7 @@
   const secsEl = document.getElementById('cd-secs');
 
   // Target: fixed launch date, shared by every visitor (Oct 14, 2026 00:00 UTC)
-  const target = 1791936000000;
+  const target = 1797246360000;
 
   function pad(n) { return String(n).padStart(2, '0'); }
 
